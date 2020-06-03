@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "projects": {
+    "sense-hub": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/sense-hub",
+      "sourceRoot": "apps/sense-hub/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/sense-hub",
+            "index": "apps/sense-hub/src/index.html",
+            "main": "apps/sense-hub/src/main.ts",
+            "polyfills": "apps/sense-hub/src/polyfills.ts",
+            "tsConfig": "apps/sense-hub/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/sense-hub/src/favicon.ico",
+              "apps/sense-hub/src/assets"
+            ],
+            "styles": ["apps/sense-hub/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/sense-hub/src/environments/environment.ts",
+                  "with": "apps/sense-hub/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "sense-hub:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "sense-hub:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "sense-hub:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/sense-hub/tsconfig.app.json",
+              "apps/sense-hub/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/sense-hub/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/sense-hub/jest.config.js",
+            "tsConfig": "apps/sense-hub/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/sense-hub/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "sense-hub-e2e": {
+      "root": "apps/sense-hub-e2e",
+      "sourceRoot": "apps/sense-hub-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/sense-hub-e2e/cypress.json",
+            "tsConfig": "apps/sense-hub-e2e/tsconfig.e2e.json",
+            "devServerTarget": "sense-hub:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "sense-hub:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/sense-hub-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/sense-hub-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "sense-hub"
+}
