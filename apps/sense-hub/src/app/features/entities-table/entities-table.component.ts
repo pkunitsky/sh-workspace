@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
 import { appearDisappear } from '../../../../../../libs/components/src/lib/shared/animations';
 
 export function trackEntityBy(index, entity: Entity) {
-  return entity.animalId;
+  return `${index}-${entity.animalId}`;
 }
 
 @Component({
@@ -60,10 +60,11 @@ export class EntitiesTableComponent implements OnInit {
   }
 
   deleteEntity(entity: Entity) {
-    this.delete$ = this.entityControllerService.deleteEntityById(entity.animalId).pipe(tap(() => {
-      this.processedDeletionEntityId = entity.animalId;
+    this.entityControllerService.deleteEntityById(entity.animalId).pipe(tap(() => {
+
+    })).subscribe(() => {
       this.entityList = this.entityList.filter(entty => entty.animalId !== entity.animalId);
-    }));
+    });
   }
 
   handleAddResponse(entity) {

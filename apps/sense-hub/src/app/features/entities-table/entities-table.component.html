@@ -36,12 +36,8 @@
                    <td>
                      <div class="actions">
                        <div class="action">
-                         <!--todo MARKED QUICK BAD SOLUTION, MOVE REQUEST TO ENTITIES-TABLE-ROW COMPONENT-->
-                         <loading-button
-                           [disabled]="processedDeletionEntityId !== null"
-                           [observable]="processedDeletionEntityId === entity.animalId ? delete$ : null"
-                           (activated)="deleteEntity(entity)"
-                           (dataOut)="processedDeletionEntityId = null;">delete</loading-button>
+                         <!--todo MARKED QUICK BAD SOLUTION, MOVE REQUEST TO ACTIONS-->
+                         <button (click)="deleteEntity(entity)">delete</button>
                        </div>
                      </div>
                    </td>
