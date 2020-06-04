@@ -23,11 +23,10 @@
          <td [attr.colspan]="Object.keys(EntitiesTableFields).length">
 
            <loading [observable]="entities$" (dataOut)="handleResponse($event)">
-             <perfect-scrollbar [style.max-height.px]="scrollContainerHeight">
+             <perfect-scrollbar [style.height.px]="scrollContainerHeight">
                <table class="inner-table" *ngIf="entityList?.length">
                  <tbody shDataTableTbody>
                  <tr shDataTableTr *ngFor="let entity of entityList; trackBy: trackEntityBy">
-                   <td><form-checkbox></form-checkbox></td>
                    <td shDataTableTd [isEditable]="true" (edited)="patchEntity(entity, $event, EntitiesTableFields.ageInDays)" [value]="entity.ageInDays"></td>
                    <td shDataTableTd [isEditable]="true" (edited)="patchEntity(entity, $event, EntitiesTableFields.newborns)" [value]="entity.newborns"></td>
                    <td shDataTableTd [isEditable]="true" (edited)="patchEntity(entity, $event, EntitiesTableFields.breedingNumber)" [value]="entity.breedingNumber"></td>
