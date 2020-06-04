@@ -25,6 +25,30 @@
     "sense-hub-e2e": {
       "tags": [],
       "implicitDependencies": ["sense-hub"]
+    },
+    "sense-hub-api": {
+      "tags": []
+    },
+    "rules-engine": {
+      "tags": []
+    },
+    "logging": {
+      "tags": []
+    },
+    "configuration": {
+      "tags": []
+    },
+    "sh-mock-api": {
+      "tags": []
+    },
+    "shared": {
+      "tags": []
+    },
+    "components": {
+      "tags": []
+    },
+    "external": {
+      "tags": []
     }
   }
 }

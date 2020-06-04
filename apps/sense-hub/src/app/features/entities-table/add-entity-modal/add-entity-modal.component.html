@@ -1,0 +1,27 @@
+<modal [width]="400" [height]="600" [isResizable]="true" [isGrabbable]="true" [isCloseOnClickOutside]="false" (closeOut)="closeOut.emit()">
+  <modal-header>
+    Action Add
+  </modal-header>
+  <modal-body>
+    <form *ngIf="form" [formGroup]="form">
+      <div class="form-group">
+        <input [formControlName]="EntityFields.ageInDays" type="text">
+      </div>
+      <div class="form-group">
+        <input [formControlName]="EntityFields.newborns" type="text">
+      </div>
+      <div class="form-group">
+        <input [formControlName]="EntityFields.breedingNumber" type="text">
+      </div>
+      <div class="form-group">
+        <input [formControlName]="EntityFields.cowId" type="text">
+      </div>
+      <div class="form-group">
+        <input [formControlName]="EntityFields.healthIndex" type="text">
+      </div>
+    </form>
+  </modal-body>
+  <modal-actions>
+    <loading-button [disabled]="form?.invalid" [observable]="submit$" (activated)="submit(form)" (dataOut)="handleResponse()">submit</loading-button>
+  </modal-actions>
+</modal>

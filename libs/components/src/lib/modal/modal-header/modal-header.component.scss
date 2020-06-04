@@ -1,0 +1,42 @@
+@import '../../shared/styles/shared';
+
+modal-header {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 8px 8px 8px 15px;
+  position: relative;
+  font-family: $font-family;
+  font-size: 16px;
+  user-select: none;
+
+  *:first-child:last-child {
+    margin-left: auto;
+  }
+
+  .header-actions {
+    display: flex;
+    justify-self: flex-end;
+  }
+
+  .modal-pin {
+    color: $dark-blue;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    width: 1em;
+    cursor: default;
+    line-height: 1;
+
+    &.active {
+      color: green;
+
+      &:hover {
+        color: green;
+      }
+    }
+  }
+}

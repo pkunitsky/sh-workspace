@@ -10,7 +10,7 @@
       },
       "root": "apps/sense-hub",
       "sourceRoot": "apps/sense-hub/src",
-      "prefix": "workspace-sense-hub",
+      "prefix": "sh",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -121,6 +121,230 @@
             "tsConfig": ["apps/sense-hub-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/sense-hub-e2e/**"]
           }
+        }
+      }
+    },
+    "sense-hub-api": {
+      "projectType": "library",
+      "root": "libs/sense-hub-api",
+      "sourceRoot": "libs/sense-hub-api/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/sense-hub-api/tsconfig.lib.json",
+              "libs/sense-hub-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/sense-hub-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/sense-hub-api/jest.config.js",
+            "tsConfig": "libs/sense-hub-api/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/sense-hub-api/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "rules-engine": {
+      "projectType": "library",
+      "root": "libs/rules-engine",
+      "sourceRoot": "libs/rules-engine/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/rules-engine/tsconfig.lib.json",
+              "libs/rules-engine/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/rules-engine/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/rules-engine/jest.config.js",
+            "tsConfig": "libs/rules-engine/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/rules-engine/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "logging": {
+      "projectType": "library",
+      "root": "libs/logging",
+      "sourceRoot": "libs/logging/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/logging/tsconfig.lib.json",
+              "libs/logging/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/logging/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/logging/jest.config.js",
+            "tsConfig": "libs/logging/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/logging/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "configuration": {
+      "projectType": "library",
+      "root": "libs/configuration",
+      "sourceRoot": "libs/configuration/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/configuration/tsconfig.lib.json",
+              "libs/configuration/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/configuration/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/configuration/jest.config.js",
+            "tsConfig": "libs/configuration/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/configuration/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "sh-mock-api": {
+      "projectType": "library",
+      "root": "libs/sh-mock-api",
+      "sourceRoot": "libs/sh-mock-api/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/sh-mock-api/tsconfig.lib.json",
+              "libs/sh-mock-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/sh-mock-api/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/sh-mock-api/jest.config.js",
+            "tsConfig": "libs/sh-mock-api/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/sh-mock-api/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "components": {
+      "projectType": "library",
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/components/tsconfig.lib.json",
+              "libs/components/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/components/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/components/jest.config.js",
+            "tsConfig": "libs/components/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/components/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "external": {
+      "projectType": "library",
+      "root": "libs/external",
+      "sourceRoot": "libs/external/src",
+      "prefix": "workspace-sense-hub",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/external/tsconfig.lib.json",
+              "libs/external/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/external/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/external/jest.config.js",
+            "tsConfig": "libs/external/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/external/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

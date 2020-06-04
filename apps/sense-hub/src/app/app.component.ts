@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EntitiesControllerService } from '../../../../libs/sh-api/src/lib/controllers/entities-controller/entities-controller.service';
 
 @Component({
-  selector: 'workspace-sense-hub-root',
+  selector: 'sh-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'sense-hub';
+export class AppComponent implements OnInit {
+
+
+  ngOnInit() {
+
+  }
+
+
 }

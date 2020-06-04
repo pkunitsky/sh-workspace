@@ -1,0 +1,7 @@
+@import '../../shared/styles/shared';
+@import '../search.utils';
+
+compact-search {
+  $font-size: 14px;
+  @include search($font-family, $font-size);
+}

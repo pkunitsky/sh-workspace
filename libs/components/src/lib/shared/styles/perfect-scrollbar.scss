@@ -1,0 +1,26 @@
+$background: #B3B3B3;
+
+perfect-scrollbar {
+  .ps__rail-x {
+    top: 0 !important;
+    height: 4px !important;
+
+    .ps__thumb-x {
+      top: 0 !important;
+      height: inherit !important;
+      background-color: $background !important;
+    }
+  }
+
+  .ps__rail-y {
+    left: auto !important;
+    right: 0 !important;
+    width: 4px !important;
+
+    .ps__thumb-y {
+      right: 0 !important;
+      width: inherit !important;
+      background-color: $background !important;
+    }
+  }
+}

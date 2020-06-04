@@ -1,0 +1,5 @@
+<label (click)="stopImmediatePropagation($event)">
+  <ng-content></ng-content>
+  <input type="checkbox" checked="checked" [(ngModel)]="value" (ngModelChange)="handleCheck($event)" tabindex="-1"/>
+  <span [autofocus]="autofocus" tabindex="0"></span>
+</label>

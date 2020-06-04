@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "origami2019",
+  "private_key_id": "6f655e115594b5fd516af9a31c0eb0d96862d748",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCeBXAGFhlrxNCO\nxGi120gTJhanSoMetVjmz38LX9SAodQumzGZB6wrgMdUCOzb6g02JpwNEKFirOWg\ny1H940ThBR8irhe9oe5W17QKZizmNAiqAt1tc9HX/Ynpa9BvlnSZzDeI5OMujP08\nDr8d29S9ixBpyVqk6lG3j5bQyaIerQ7gmoJLazhfPhReNP6O4C4B3k46z3JFnMUK\nNxJQ6ggio0cBKc9H0NW8EllzduHFnrYitRSggItddVfS1vpaGhozBAPJtWbXEbh1\nxASpz/EgdImpiaj3XYd/ytRznHV6880XrSVd8mQ7/MSKba+gd3HAH4havbYQP+wl\neB82jdS9AgMBAAECggEAFHyO+/MEg7DF+yRikOUncHgZKsIhwqrvJilThrV7Vtvk\nJtCu+vCANTmiXfY0QwSShuk1hQoZajIRKSoC7L/4r5Wa5kOcx1SFklOvv0Nk4clw\nMB5j96sy0uZHaXA1Wyot3ryXnJNUErZrpEwjIetcpuAvFg/pRQUt5/bhLhtd/czs\njP6lb5/BI//iJR6a72IeFed2sKe09f579iwkqBqI9oGA2drgZ/9DZ/yVSY4icJFd\nQB9e5IOjv98KfLW4gs2BZpjM50juuA9EvsLKOaSDiuVy8Z6G1F/JLW1MTDU8lbZ0\np8aT+4VBRBtIxOQgV46zYhk7T/HIs4kTmdXu6T2MrwKBgQDbmKfW8xLTIA9ESyUW\nnFjmUehK+n5vKOJfakk6WkHH7Jn+Wr6BRA5CZN/sl4V30aD10m6rmx93C7LV3CuK\nPXq3H0lL+hqLWnQrXUEja24FNnqtNSWliq/J+BPKc7HhPhyEWmE9RctVknuHinmK\nXJI5k338TM1Pe2NkOIWGa8YkdwKBgQC4N6Bmuxc/EHsFvGpmZ0+Zws5MZ0cYiy/B\nPtjNi89u1gr9jiCidT1jeLOwoe4R0QvXrgk+6vBqR7PiQGv6NlKzLLszOJkYOq0a\nqTHYcp7t578ken4u0JYhxDOqTnMDoUc8f+ogdvb2CPSQlyJnOrwMap7DQzDnnm83\nC0mevNDhawKBgATXf9PgdijLiyqhUYcHGXqykaGdlk4TI7Kg4E52EP88e0S9cXfe\nLUZPfRR1Xs7+g0MIScJk4DO6wU2v1hHtOxhwiygusokiDG+sVbRXOQzKX7gT9OmK\nfkfAvYb4OBLUUMKmT4CPWmVfnnOlnPptAhhc5Sk79EbtXIqoKGGHXM4PAoGALdCP\n0NzY1DNaFTwdzigFcP0052WMFfuPveTOcJhD15HeG988GItF4DZFojkzhzTRWCuN\nWxt8/UGl6DATaqAWAz+tsvhxgsgdAxNvNSCUjCBltkHMngH8RJuSKdnm2tFCcTZy\n2O4dT2U8xbUAtmGyIPhnUbKlOAV8LVleTt8wp88CgYEAl3MN+JTDGUHQmQDvzMyY\nZeQ26mK2TsqNzEC0WF4khbp89QHIGGZHgD/iUWVPTkFLWKnbPKmW8bmvFvqXGn2z\nvus/cPqy9U3juAoBZPie+Sf1N8kNGrUTN6pYgSrZASquZDngz9ZMWxAVQS3NkouJ\nSgQtfovtRY9iNx19nMojQR0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "origami-localization@origami2019.iam.gserviceaccount.com",
+  "client_id": "100284950835404530306",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/origami-localization%40origami2019.iam.gserviceaccount.com"
+}

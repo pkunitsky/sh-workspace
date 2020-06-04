@@ -1,0 +1,5 @@
+@import '../resize.utils';
+
+resize-handle {
+  @include resizeHandle;
+}

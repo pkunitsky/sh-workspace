@@ -1,0 +1,109 @@
+@import '../../shared/styles/shared';
+
+@mixin formSelect($width) {
+  $font-size: 14px;
+  $bg-color: #F5F7F7;
+
+  display: inline-block;
+  position: relative;
+  font-size: $font-size;
+
+  &.invalid {
+    .select {
+      outline: 1px solid $red;
+
+      &:focus {
+        outline: -webkit-focus-ring-color auto 1px !important;
+      }
+    }
+  }
+
+  .select {
+    border: 1px solid #eee;
+    padding: 5px 5px 5px 10px;
+    border-radius: 3px;
+    display: block;
+    user-select: none;
+    width: $width;
+    background: $bg-color;
+  }
+
+  input {
+    background: inherit;
+    border: none;
+    outline: none;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    transform: translateY(-50%);
+  }
+
+  .placeholder {
+    color: $placeholder-color;
+    @include textOverflowEllipsis;
+  }
+
+  &.disabled {
+    color: #ccc;
+    pointer-events: none;
+  }
+
+  .selected-option {
+    padding-right: 7px;
+    @include textOverflowEllipsis;
+  }
+
+  .form-select-menu {
+    position: absolute;
+    transform: translateY(100%);
+    bottom: -4px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    background: none;
+    width: 100%;
+    border-top: 1px solid #eee;
+    border-radius: 3px;
+    background: white;
+    z-index: 2;
+
+    .form-select-perfect-scrollbar {
+      position: relative;
+      max-height: 200px;
+
+      .ps-content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  form-select-option {
+    display: block;
+    cursor: pointer;
+    padding: 5px 5px 5px 10px;
+    border-bottom: 1px solid #eee;
+    @include textOverflowEllipsis;
+
+    &.disabled {
+      color: #ccc;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: rgba($blue, 0.1);
+      border-color: rgba($blue, 0.1);
+    }
+
+    &.selected {
+      color: white;
+      background: $blue;
+      border-color: $blue;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+%scroll {
+  scrollbar-width: thin; //for Firefox 64+
+  scrollbar-color: #eee; //for Firefox 64+
+
+  &::-webkit-scrollbar-thumb {
+    background: #eee;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.scroll-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  @extend %scroll;
+
+  &::-webkit-scrollbar {
+    height: 5px;
+    border-radius: 3px;
+  }
+}
+
+.scroll-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  @extend %scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 3px;
+  }
+}

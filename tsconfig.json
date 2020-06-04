@@ -15,7 +15,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@workspace-sense-hub/sh-api": ["libs/sh-api/src/index.ts"],
+      "@workspace-sense-hub/rules-engine": ["libs/rules-engine/src/index.ts"],
+      "@workspace-sense-hub/logging": ["libs/logging/src/index.ts"],
+      "@workspace-sense-hub/configuration": ["libs/configuration/src/index.ts"],
+      "@workspace-sense-hub/sh-mock-api": ["libs/sh-mock-api/src/index.ts"],
+      "@workspace-sense-hub/components": ["libs/components/src/index.ts"],
+      "@workspace-sense-hub/external": ["libs/external/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,83 @@
+@mixin resizeLine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: transparent;
+
+  &.top {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8px;
+    cursor: ns-resize;
+  }
+  &.bottom {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 8px;
+    cursor: ns-resize;
+  }
+  &.left {
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    cursor: ew-resize;
+  }
+  &.right {
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 100%;
+    cursor: ew-resize;
+  }
+
+  .resize-line-resizer {
+    line-height: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+  }
+
+  &:hover {
+    .resize-line-resizer {
+      opacity: 1;
+    }
+  }
+
+  &.left,
+  &.right {
+    .resize-line-resizer {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+@mixin resizeHandle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+
+  &.top-left {
+    top: 0;
+    left: 0;
+    cursor: nwse-resize;
+  }
+  &.top-right {
+    top: 0;
+    right: 0;
+    cursor: nesw-resize;
+  }
+  &.bottom-left {
+    bottom: 0;
+    left: 0;
+    cursor: nesw-resize;
+  }
+  &.bottom-right {
+    bottom: 0;
+    right: 0;
+    cursor: nwse-resize;
+  }
+}

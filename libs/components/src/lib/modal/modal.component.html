@@ -1,0 +1,46 @@
+<div class="fixed-wrapper" #element
+     [class.isFullscreen]="isFullscreen"
+     [class.isCentered]="isCentered"
+     [class.isTransitionEnabled]="isTransitionEnabled"
+     [style.zIndex]="zIndex"
+     [style.top.px]="top"
+     [style.left.px]="left"
+     [style.bottom.px]="bottom"
+     [style.right.px]="right"
+     [style.minWidth.px]="minWidth"
+     [style.minHeight.px]="minHeight"
+     [style.width.px]="width"
+     [style.height.px]="height">
+
+  <div class="modal-element"
+       *ngIf="show"
+       @appearDisappear
+       (@appearDisappear.done)="handleAnimationEnd()"
+       [@.disabled]="!isAnimated"
+       [class.isGrabbed]="isGrabbed"
+       [class.isResized]="isResized"
+       [class.isResizable]="isResizable"
+       [class.isPinned]="isPinned">
+    <ng-content select="modal-header"></ng-content>
+
+    <perfect-scrollbar class="modal-element-perfect-scrollbar" [config]="config">
+      <ng-content select="modal-body"></ng-content>
+    </perfect-scrollbar>
+
+    <ng-content select="modal-actions"></ng-content>
+
+    <ng-container *ngIf="isResizable">
+      <resize-line class="top" (mousedown)="enableResize($event, grabPlaces.top)"></resize-line>
+      <resize-line class="right" (mousedown)="enableResize($event, grabPlaces.right)"></resize-line>
+      <resize-line class="bottom" (mousedown)="enableResize($event, grabPlaces.bottom)"></resize-line>
+      <resize-line class="left" (mousedown)="enableResize($event, grabPlaces.left)"></resize-line>
+
+      <resize-handle class="bottom-left" (mousedown)="enableResize($event, grabPlaces.bottomLeft)"></resize-handle>
+      <resize-handle class="top-left" (mousedown)="enableResize($event, grabPlaces.topLeft)"></resize-handle>
+      <resize-handle class="top-right" (mousedown)="enableResize($event, grabPlaces.topRight)"></resize-handle>
+      <resize-handle class="bottom-right" (mousedown)="enableResize($event, grabPlaces.bottomRight)"></resize-handle>
+    </ng-container>
+  </div>
+</div>
+
+<div class="modal-bg-overlay" *ngIf="showBackgroundMask && isBackgroundMaskVisible" [style.zIndex]="zIndex - 1" (click)="handleClickOutside()"></div>

@@ -1,0 +1,7 @@
+<div>
+  <ng-content></ng-content>
+</div>
+<div class="header-actions">
+  <ng-content select="modal-header-action"></ng-content>
+  <modal-header-action-close *ngIf="!modal.noCloseButton"></modal-header-action-close>
+</div>

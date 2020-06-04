@@ -1,0 +1,9 @@
+@import 'modal.utils';
+
+modal {
+  $color: #333;
+  $bg-color: white;
+  $border-radius: 2px;
+
+  @include modal($color, $bg-color, $border-radius);
+}

@@ -1,0 +1,14 @@
+<three-dots-animated *ngIf="active && !failed"></three-dots-animated>
+
+<div class="error" *ngIf="failed && errorStatus !== 401">
+  <div class="error__message">Something went wrong</div>
+  <a class="button" (click)="refresh()">Try Again</a>
+</div>
+
+<div class="error" *ngIf="failed && errorStatus === 401">
+  <div class="error__message">Available for logged in users only</div>
+  <a class="button" (click)="refresh()">Try Again</a>
+</div>
+
+<ng-content *ngIf="completed"></ng-content>
+<ng-container *ngIf="(completed && useTemplate)" [ngTemplateOutlet]="template"></ng-container>

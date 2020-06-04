@@ -1,0 +1,76 @@
+@import '../../shared/styles/shared';
+// @import '../../../core/meeting/meeting-themes/meeting-themes.utils';
+
+@mixin formCheckbox($font-size: 14px, $x: 20px) {
+  $transition-time: 0.15s;
+
+  display: flex;
+  font-size: $font-size;
+
+  label {
+    display: block;
+    position: relative;
+    padding-left: $x + 12px;
+    cursor: pointer;
+    user-select: none;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked {
+        & ~ span {
+          &:after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: $x;
+      width: $x;
+      transform: translateY(-50%);
+      border-radius: 2px;
+      background: transparent;
+      border: 2px solid #5a5a5a;
+      transition: all $transition-time;
+
+      &:focus {
+        outline: -webkit-focus-ring-color auto 1px !important;
+      }
+
+      &:before {
+        left: 25%;
+        top: 45%;
+        width: $x * 0.4;
+        height: $x / 1.53;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: translate(-50%, -50%) rotateZ(37deg);
+        transform-origin: 100% 100%;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        transition: all $transition-time;
+      }
+    }
+  }
+
+  &.isLocked {
+    span {
+      cursor: default;
+      &:focus {
+        outline: none !important;
+      }
+    }
+  }
+
+  //@include checkboxThemes;
+}

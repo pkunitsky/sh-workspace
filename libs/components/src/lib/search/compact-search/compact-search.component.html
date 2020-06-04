@@ -1,0 +1,20 @@
+<div class="search-overlay" [class.hide]="value || checkFocus(inputElement)">
+  <div class="search-tips">
+
+    <div class="search-placeholder" *ngIf="placeholder">{{placeholder}}</div>
+
+    <div class="search-tip" *ngFor="let tip of tips; let index = index"
+         [class.prev]="index === prevTip"
+         [class.current]="index === currentTip"
+         [class.next]="index === nextTip">
+      {{tip}}
+    </div>
+  </div>
+</div>
+
+<button class="search-button">
+  <svg class="search-icon" source="assets/svg/lens.svg" *ngIf="!value"></svg>
+  <svg class="search-icon" source="assets/svg/close.svg" *ngIf="value" (click)="clear()"></svg>
+</button>
+
+<input #inputElement class="search-input" [(ngModel)]="value" (ngModelChange)="handleValueChange($event)">

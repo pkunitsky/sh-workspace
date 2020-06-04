@@ -1,0 +1,16 @@
+<div class="oops" *ngIf="value">
+  <svg source="assets/svg/lens.svg" class="oops-icon"></svg>
+  <div class="text">
+    <p class="text-title">No matches for</p>
+    <p class="text-subtitle">{{value}}</p>
+    <p class="text-request">Please check the spelling or try to change search</p>
+  </div>
+</div>
+
+<div class="oops" *ngIf="!value">
+  <svg source="assets/svg/lens.svg" class="oops-icon"></svg>
+  <div class="text">
+    <p class="text-title">No matches</p>
+    <p class="text-request">Make sure that your filter conditions are not too strict</p>
+  </div>
+</div>

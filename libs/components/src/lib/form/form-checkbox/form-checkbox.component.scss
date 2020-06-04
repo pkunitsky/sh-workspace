@@ -1,0 +1,6 @@
+@import '../../../shared/styles/shared';
+@import 'form-checkbox.utils';
+
+form-checkbox {
+  @include formCheckbox;
+}

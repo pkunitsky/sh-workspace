@@ -1,0 +1,7 @@
+@import '../search.utils';
+
+search {
+  $font-size: 16px;
+  $open-sans: 'Open Sans', sans-serif;
+  @include search($open-sans, $font-size);
+}

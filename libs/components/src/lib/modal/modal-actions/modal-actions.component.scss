@@ -1,0 +1,22 @@
+@import '../../shared/styles/shared';
+
+modal-actions {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 16px 12px 16px;
+  justify-items: center;
+  background: $light-azure;
+  margin-top: auto;
+  font-family: $font-family-secondary;
+  font-size: $font-size;
+  background: none;
+
+  button {
+    margin-left: 15px;
+    border-radius: 4px;
+  }
+}

@@ -1,0 +1,16 @@
+oops-not-found {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  .oops {
+    user-select: none;
+    margin-top: 180px;
+    display: block;
+    border-radius: 5px;
+
+    h1 {
+      margin-top: 0;
+    }
+  }
+}
