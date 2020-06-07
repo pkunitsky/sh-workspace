@@ -1,0 +1,14 @@
+sh-entities-grid {
+  display: block;
+  margin-right: 3px;
+}
+
+.actions {
+  display: flex;
+
+  .action {
+    &:not(:first-child) {
+      margin-left: 6px;
+    }
+  }
+}

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 
 export enum LocalStorageKeys {
-  sidebarIsOpen = 'mm-sidebar-is-open',
-  rightbarIsOpen = 'mm-rightbar-is-open'
+  enableShMockApi = 'enableShMockApi'
 }
 
 @Injectable({

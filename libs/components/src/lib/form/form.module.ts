@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { FormCheckboxComponent } from './form-checkbox/form-checkbox.component';
-import { DirectivesModule } from '../shared/directives/directives.module';
+import { FormInputComponent } from './form-input/form-input.component';
 
 @NgModule({
   imports: [
     FormsModule,
-    ReactiveFormsModule,
-    DirectivesModule
+    ReactiveFormsModule
   ],
   declarations: [
     FormCheckboxComponent,
+    FormInputComponent
   ],
   exports: [
-    FormCheckboxComponent
+    FormCheckboxComponent,
+    FormInputComponent
   ]
 })
 export class FormModule {

@@ -1,0 +1,47 @@
+@import '../../shared/styles/shared';
+
+@mixin confirmation {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 4px;
+  z-index: 999;
+  border-radius: 2px;
+  border: 1px solid #d8d8d8;
+  font-size: 14px;
+  background: #fff;
+  box-shadow: 1px 1px 10px -1px #ccc;
+  width: 140px;
+
+  .confirmation-body {
+    padding: 0 8px;
+  }
+
+  .confirmation-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 7px;
+    padding: 0 10px;
+
+    .btn {
+      min-width: 45px;
+      padding: 1px;
+      font-size: 13px;
+      border: 1px solid #d8d8d8;
+      color: #000;
+
+      &.danger {
+        color: white;
+        background: $danger;
+        border: 1px solid darken($danger, 0.2);
+      }
+
+      &:not(:first-child) {
+        margin-left: 6px;
+      }
+    }
+  }
+}

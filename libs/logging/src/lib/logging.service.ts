@@ -1,83 +1,34 @@
-import { Injectable, Optional } from '@angular/core';
-
-import { Severity } from './severity.enum';
-import { IConfiguration } from '@workspace-sense-hub/configuration';
-import { ConfigurationService } from '@workspace-sense-hub/configuration';
+import { Injectable } from '@angular/core';
+import { LogType } from './severity.enum';
 import { LogEntry } from './log-entry';
-import { Subject, ReplaySubject } from 'rxjs';
+import { ReplaySubject, Subject } from 'rxjs';
 import { ILogEntry } from './i-log-entry';
-import { LoggingConfig } from './config/logging-config';
+import { format_logger } from '../../../components/src/lib/shared/constants/moment-formatting';
+import * as moment from 'moment';
 
 @Injectable()
 export class LoggingService {
-  serviceName = 'LoggingService';
-  source: string;
-  severity: Severity;
-  message: string;
-  timestamp: Date;
-  applicationName = 'application';
-  version = '0.0.0';
-  isProduction: boolean;
-  config: LoggingConfig;
-
   logEntries$: Subject<ILogEntry> = new ReplaySubject<ILogEntry>(1);
 
   /**
    * The [LoggingService] constructor.
    */
-  constructor(@Optional() public configService: ConfigurationService) {
-    this.timestamp = new Date(Date.now());
-    this.log(
-      this.serviceName,
-      Severity.Information,
-      `Starting logging service at: ${this.timestamp}`
-    );
-
-    if (configService) {
-      this.configService.settings$.subscribe(settings => this.handleSettings(settings));
-    }
-  }
-
-  handleSettings(settings: IConfiguration) {
-    this.config = settings as LoggingConfig;
-    this.applicationName =
-      this.config && this.config.loggingConfig.applicationName
-        ? this.config.loggingConfig.applicationName
-        : 'application';
-    this.version =
-      this.config && this.config.loggingConfig.version
-        ? this.config.loggingConfig.version
-        : '0.0.0';
-    this.isProduction =
-      this.config && this.config.loggingConfig.isProduction
-        ? this.config.loggingConfig.isProduction
-        : false;
+  constructor() {
+    this.publishLog(LogType.Information, `starting logging service at: ${moment().format(format_logger)}`);
   }
 
   /**
    * Use this method to send a log message with severity and source information
    * to the application's logger.
-   *
-   * If the application environment mode is [Production], the information will
-   * be sent to a centralized repository.
-   *
-   * @param source
    * @param severity
    * @param message
+   * @param timestamp
    */
-  log(source: string, severity: Severity, message: string, tags?: string[]) {
-    this.source = `${this.applicationName}.${source}`;
-    this.severity = severity;
-    this.message = message;
-    this.timestamp = new Date(Date.now());
-
-    const logEntry = new LogEntry(
-      this.applicationName,
-      this.source,
-      this.severity,
-      this.message,
-      tags
-    );
-    this.logEntries$.next(logEntry);
+  publishLog(severity: LogType, message: string, timestamp = new Date(Date.now())) {
+    this.logEntries$.next(new LogEntry(
+      severity,
+      message,
+      timestamp
+    ));
   }
 }

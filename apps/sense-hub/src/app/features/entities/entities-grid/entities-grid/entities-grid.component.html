@@ -1,0 +1,35 @@
+<table class="table" shGridTable>
+  <thead class="table-thead" shGridThead>
+  <th shGridTh>index</th>
+  <th shGridTh>age in days</th>
+  <th shGridTh>newborns</th>
+  <th shGridTh>breeding number</th>
+  <th shGridTh>cow id</th>
+  <th shGridTh>health index</th>
+  <th shGridTh>actions</th>
+  </thead>
+  <tbody>
+  <tr>
+    <td [attr.colspan]="7">
+      <loading [observable]="entities$" (dataOut)="handleResponse($event)">
+        <perfect-scrollbar [style.height.px]="500" *ngIf="(entitiesGridItemsService.items$|async) as items">
+          <table class="inner-table" *ngIf="items?.length">
+            <tbody shGridTbody>
+            <tr shGridTr *ngFor="let entity of items; let index = index; trackBy: trackEntityBy">
+              <td shGridTd [value]="index"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.ageInDays, $event)" [value]="entity.ageInDays"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.newborns, $event)" [value]="entity.newborns"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.breedingNumber, $event)" [value]="entity.breedingNumber"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.cowId, $event)" [value]="entity.cowId"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.healthIndex, $event)" [value]="entity.healthIndex"></td>
+              <td shGridTd [isEditable]="false"><sh-entity-delete-action [entity]="entity"></sh-entity-delete-action></td>
+            </tr>
+            </tbody>
+          </table>
+          <oops-no-content *ngIf="!items?.length"></oops-no-content>
+        </perfect-scrollbar>
+      </loading>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,9 +1,0 @@
-<ng-container *ngIf="!isEditMode">
-  <div>{{value}}</div>
-</ng-container>
-
-<ng-container *ngIf="isEditMode">
-  <form autocomplete="off" *ngIf="form" [formGroup]="form" spellcheck="false" (ngSubmit)="save(form.value.string)">
-    <input type="text" name="value" (focusout)="save(form.value.string)" formControlName="string">
-  </form>
-</ng-container>

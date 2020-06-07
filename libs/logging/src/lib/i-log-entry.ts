@@ -1,10 +1,7 @@
-import { Severity } from './severity.enum';
+import { LogType } from './severity.enum';
 
 export interface ILogEntry {
-  source: string;
-  application: string;
-  severity: Severity;
+  severity: LogType;
   message: string;
   timestamp: Date;
-  tags?: string[];
 }

@@ -25,7 +25,10 @@
               "apps/sense-hub/src/favicon.ico",
               "apps/sense-hub/src/assets"
             ],
-            "styles": ["apps/sense-hub/src/styles.scss"],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap-grid.css",
+              "apps/sense-hub/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {

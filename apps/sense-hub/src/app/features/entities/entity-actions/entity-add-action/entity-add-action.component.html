@@ -1,0 +1,22 @@
+<form class="form" *ngIf="form" [formGroup]="form">
+  <div class="form-group mb-2">
+    <form-input placeholder="Age in days" [formControlName]="EntityFields.ageInDays" type="text"></form-input>
+  </div>
+  <div class="form-group mb-2">
+    <form-input placeholder="Newborns" [formControlName]="EntityFields.newborns" type="text"></form-input>
+  </div>
+  <div class="form-group mb-2">
+    <form-input placeholder="Breeding number" [formControlName]="EntityFields.breedingNumber" type="text"></form-input>
+  </div>
+  <div class="form-group mb-2">
+    <form-input [formControlName]="EntityFields.cowId" type="text">Cow ID</form-input>
+  </div>
+  <div class="form-group mb-2">
+    <form-input [formControlName]="EntityFields.healthIndex">Health Index</form-input>
+  </div>
+</form>
+
+<loading-button (activated)="submit(form)"
+                (dataOut)="handleResponse()"
+                [disabled]="form.invalid"
+                [observable]="submit$">submit</loading-button>

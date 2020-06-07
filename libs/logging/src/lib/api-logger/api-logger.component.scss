@@ -1,0 +1,68 @@
+:host {
+  $info: #3498db;
+  $danger: #e74c3c;
+  $warning: #f39c12;
+  $success: #27ae60;
+
+  display: block;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+
+  .control-panel {
+    margin-bottom: 3px;
+  }
+
+  .logs {
+    &-entry {
+      padding: 1px 3px;
+      margin: 0 0 5px 10px;
+      display: flex;
+
+      &:before {
+        display: block;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 3px;
+        transform: translateX(-12px);
+      }
+
+      .entry-message {
+        text-wrap: none;
+        text-overflow: ellipsis;
+        flex: 1;
+      }
+
+      .entry-timestamp {
+        text-wrap: none;
+        text-overflow: ellipsis;
+        flex: 0 0 30px;
+      }
+
+      &.success {
+        &:before {
+          background: $success;
+        }
+      }
+
+      &.warning {
+        &:before {
+          background: $warning;
+        }
+      }
+
+      &.info {
+        &:before {
+          background: $info;
+        }
+      }
+
+      &.danger {
+        &:before {
+          background: $danger;
+        }
+      }
+    }
+  }
+}

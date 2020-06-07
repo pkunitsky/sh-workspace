@@ -1,21 +1,28 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ShMockApiInterceptor } from './sh-mock-api.interceptor';
-import { ShApiConfig, ShApiModule } from '@workspace-sense-hub/sh-api';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ShMockApiInterceptor } from './services/sh-mock-api.interceptor';
+import { ShApiModule } from '@workspace-sense-hub/sh-api';
+import { ApiSwitcherComponent } from './api-switcher/api-switcher.component';
+import { ApiLoggerInterceptor } from './services/api-logger.interceptor';
 
 @NgModule({
-  imports: [CommonModule, ShApiModule],
-  exports: [ShApiModule]
+  declarations: [
+    ApiSwitcherComponent
+  ],
+  imports: [
+    CommonModule,
+    ShApiModule,
+    HttpClientModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiLoggerInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ShMockApiInterceptor, multi: true }
+  ],
+  exports: [
+    HttpClientModule,
+    ApiSwitcherComponent
+  ]
 })
 export class ShMockApiModule {
-  static forRoot(config: ShApiConfig): ModuleWithProviders {
-    return {
-      ngModule: ShApiModule,
-      providers: [
-        {provide: ShApiConfig, useValue: config},
-        {provide: HTTP_INTERCEPTORS, useClass: ShMockApiInterceptor, multi: true}
-      ]
-    }
-  }
 }

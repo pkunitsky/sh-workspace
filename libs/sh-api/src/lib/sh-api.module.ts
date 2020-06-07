@@ -23,11 +23,4 @@ export class ShApiModule {
       ]
     };
   }
-
-  constructor(@Optional() @SkipSelf() parentModule?: ShApiModule) {
-    if (parentModule) {
-      throw new Error(
-        'ShApiModule is already loaded. Import it in the AppModule only');
-    }
-  }
 }

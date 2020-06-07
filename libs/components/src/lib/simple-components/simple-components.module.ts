@@ -13,7 +13,7 @@ import { DirectivesModule } from '../shared/directives/directives.module';
     CommonModule,
     MomentModule,
     DirectivesModule,
-    LoadingModule
+    LoadingModule,
   ],
   exports: [
     CloseButtonComponent,

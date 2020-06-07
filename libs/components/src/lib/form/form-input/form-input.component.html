@@ -1,0 +1,9 @@
+<div class="input-wrapper" tabindex="0">
+  <div class="input-placeholder" [class.hide]="value?.trim()" *ngIf="placeholder">{{placeholder}}<ng-content></ng-content></div>
+  <input #inputElement
+         [attr.type]="type"
+         [(ngModel)]="value"
+         (ngModelChange)="handleChange($event)"
+         spellcheck="false"
+         (focusin)="focusin.emit()" (focusout)="focusout.emit()"/>
+</div>

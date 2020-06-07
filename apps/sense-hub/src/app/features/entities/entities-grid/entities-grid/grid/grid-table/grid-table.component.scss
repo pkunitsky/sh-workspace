@@ -1,0 +1,47 @@
+[shGridTable] {
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  & > thead,
+  & > thead > tr,
+  & > thead > tr > th,
+  & > tbody,
+  & > tbody > tr,
+  & > tbody > tr > td {
+    &:first-child {
+      border-left: none;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  &, thead, tbody, tr, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+  }
+
+  [shGridThead] {
+    th {
+      height: 50px;
+      width: 100px;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+
+    [shGridTbody] {
+      tr {
+        &:nth-of-type(odd) {
+          background: #f9f9f9;
+        }
+
+        td {
+        }
+      }
+    }
+  }
+}

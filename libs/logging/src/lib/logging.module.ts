@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxLogglyModule } from 'ngx-loggly-logger';
+import { LoggingService } from './logging.service';
+import { LogWriterConsole } from './log-writers/log-writer-console';
 
 @NgModule({
-  imports: [CommonModule, NgxLogglyModule.forRoot()],
-  providers: [],
+  imports: [CommonModule],
+  providers: [
+    LoggingService,
+    LogWriterConsole,
+  ],
 })
 export class LoggingModule {}

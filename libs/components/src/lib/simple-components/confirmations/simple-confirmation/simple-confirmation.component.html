@@ -1,0 +1,11 @@
+<div *ngIf="show && options" @appearDisappear (@appearDisappear.done)="handleAnimationEnd()">
+  <div class="confirmation {{options?.placement}}">
+    <div class="confirmation-body">
+      <ng-content></ng-content>
+    </div>
+    <div class="confirmation-actions">
+      <div class="btn" (click)="decline()"> No</div>
+      <div class="btn danger" (click)="accept()"> Yes</div>
+    </div>
+  </div>
+</div>

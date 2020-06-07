@@ -1,0 +1,10 @@
+@import '../confirmations.utils';
+
+simple-confirmation {
+  position: fixed;
+  z-index: 910;
+
+  .confirmation {
+    @include confirmation;
+  }
+}

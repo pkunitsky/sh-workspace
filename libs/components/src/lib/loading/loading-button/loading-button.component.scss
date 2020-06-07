@@ -2,10 +2,18 @@
 
 loading-button {
   button {
-    position: relative;
-    display: inline-block;
-    padding: 0.375em 0.75em;
-    font-size: inherit;
+    &.btn {
+      position: relative;
+      display: inline-block;
+      padding: 0.375em 0.75em;
+      font-size: inherit;
+    }
+
+    &.no-button {
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
 
     .three-dots-loading {
       position: absolute;

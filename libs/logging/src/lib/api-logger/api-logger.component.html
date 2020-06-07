@@ -1,0 +1,17 @@
+<div class="control-panel">
+  <sh-api-switcher></sh-api-switcher>
+  <button (click)="clear()">clear</button>
+</div>
+
+<perfect-scrollbar #scrollbarComponent [style.height.px]="500">
+  <div class="logs">
+    <div class="logs-entry" *ngFor="let entry of logEntries"
+         [class.success]="entry.severity === logType.Success"
+         [class.warning]="entry.severity === logType.Warning"
+         [class.info]="entry.severity === logType.Information"
+         [class.danger]="entry.severity === logType.Error">
+      <div class="entry-message">{{entry.message}}</div>
+      <div class="entry-timestamp">{{entry.timestamp|amDateFormat:format_logger}}</div>
+    </div>
+  </div>
+</perfect-scrollbar>
