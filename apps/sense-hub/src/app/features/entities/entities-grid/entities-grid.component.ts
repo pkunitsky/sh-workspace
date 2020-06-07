@@ -44,10 +44,10 @@ export class EntitiesGridComponent implements OnInit, OnDestroy {
     this.loggingService.publishLog(LogType.Information, `fetched ${response.length} entries`)
   }
 
-  patchValue(entity: Entity, fieldName: EntitiesGridFields, value: string) {
+  patchValue(entity: Entity, index: number, fieldName: EntitiesGridFields, value: string) {
     const _entity = clone(entity);
     _entity[fieldName] = value;
-    this.entitiesGridItemsService.updateItem(_entity).subscribe(() => {});
+    this.entitiesGridItemsService.updateItem(_entity, index).subscribe(() => {});
   }
 
   ngOnDestroy(): void {

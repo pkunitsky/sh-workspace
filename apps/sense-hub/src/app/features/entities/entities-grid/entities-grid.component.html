@@ -19,11 +19,11 @@
             <tbody shGridTbody>
             <tr shGridTr *ngFor="let entity of items; let index = index; trackBy: trackEntityBy">
               <td shGridTd [value]="index"></td>
-              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.ageInDays, $event)" [value]="entity.ageInDays"></td>
-              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.newborns, $event)" [value]="entity.newborns"></td>
-              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.breedingNumber, $event)" [value]="entity.breedingNumber"></td>
-              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.cowId, $event)" [value]="entity.cowId"></td>
-              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, EntitiesGridFields.healthIndex, $event)" [value]="entity.healthIndex"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, index, EntitiesGridFields.ageInDays, $event)" [value]="entity.ageInDays"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, index, EntitiesGridFields.newborns, $event)" [value]="entity.newborns"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, index, EntitiesGridFields.breedingNumber, $event)" [value]="entity.breedingNumber"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, index, EntitiesGridFields.cowId, $event)" [value]="entity.cowId"></td>
+              <td shGridTd [isEditable]="true" (editOut)="patchValue(entity, index, EntitiesGridFields.healthIndex, $event)" [value]="entity.healthIndex"></td>
               <td shGridTd [isEditable]="false">
                 <sh-entity-delete-action [entity]="entity"></sh-entity-delete-action>
 <!--                <sh-entity-view-action [entity]="entity"></sh-entity-view-action>-->

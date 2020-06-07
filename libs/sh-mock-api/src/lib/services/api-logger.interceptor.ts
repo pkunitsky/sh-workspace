@@ -22,8 +22,6 @@ export class ApiLoggerInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(req.url.replace(this.config.apiBase, this.mockApiService.apiBase));
-    console.log(req.url);
     const request = this.mockApiService.isEnabled ? req.clone({url: req.url.replace(this.config.apiBase, this.mockApiService.apiBase)})
       : req;
     const path = this.mockApiService.formatRequestUrl(request);

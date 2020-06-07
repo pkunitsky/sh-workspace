@@ -56,20 +56,16 @@ export class EntitiesGridItemsService {
   /**
    * perform request, update table item
    * @param entity
+   * @param index
    */
-  updateItem(entity: Entity) {
+  updateItem(entity: Entity, index: number) {
     return this.entitiesControllerService
       .patchEntity(entity)
       .pipe(tap(() => {
         this.entitiesControllerService.patchEntity(entity).subscribe(() => {
-          let _items = clone(this.items);
-          const index = _items.findIndex(entty => entty.animalId === entity.animalId);
-
-          if (index !== -1) {
-            _items = _items.filter(entty => entty.animalId !== entity.animalId);
-            _items.splice(index, 0, entity);
-            this.items = _items;
-          }
+          const _items = clone(this.items);
+          _items[index] = entity;
+          this.items = _items;
         });
       }));
   }
