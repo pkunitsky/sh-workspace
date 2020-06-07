@@ -6,13 +6,15 @@ import { LoadingModule, SimpleConfirmationModule } from '@workspace-sense-hub/co
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormModule } from '../../../../../../../libs/components/src/lib/form/form.module';
+import { EntityViewActionComponent } from './entity-view-action/entity-view-action.component';
 
 
 
 @NgModule({
   declarations: [
     EntityAddActionComponent,
-    EntityDeleteActionComponent
+    EntityDeleteActionComponent,
+    EntityViewActionComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { FormModule } from '../../../../../../../libs/components/src/lib/form/fo
   ],
   exports: [
     EntityAddActionComponent,
-    EntityDeleteActionComponent
+    EntityDeleteActionComponent,
+    EntityViewActionComponent
   ]
 })
 export class EntityActionsModule { }

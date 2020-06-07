@@ -4,10 +4,12 @@ import { MomentModule } from 'ngx-moment';
 import { CloseButtonComponent } from './close-button/close-button.component';
 import { LoadingModule } from '../loading/loading.module';
 import { DirectivesModule } from '../shared/directives/directives.module';
+import { RemoveButtonComponent } from './remove-button/remove-button.component';
 
 @NgModule({
   declarations: [
     CloseButtonComponent,
+    RemoveButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,7 @@ import { DirectivesModule } from '../shared/directives/directives.module';
   ],
   exports: [
     CloseButtonComponent,
+    RemoveButtonComponent
   ]
 })
 export class SimpleComponentsModule {

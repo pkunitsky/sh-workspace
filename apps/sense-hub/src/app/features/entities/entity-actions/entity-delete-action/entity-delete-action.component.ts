@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { EntitiesControllerService, Entity } from '@workspace-sense-hub/sh-api';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { EntitiesGridItemsService } from '../../entities-grid/services/entities-grid-items.service';
+import { EntitiesGridItemsService } from '../../entity-services/entities-grid-items.service';
 
 @Component({
   selector: 'sh-entity-delete-action',

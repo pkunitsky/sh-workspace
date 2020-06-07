@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EntitiesGridFields } from '../../entities-grid/entities-grid-fields.enum';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EntitiesControllerService } from '@workspace-sense-hub/sh-api';
+import { EntitiesGridItemsService } from '../../entity-services/entities-grid-items.service';
 
 @Component({
   selector: 'sh-entity-add-action',
@@ -12,7 +13,7 @@ export class EntityAddActionComponent implements OnInit {
   readonly EntityFields = EntitiesGridFields;
 
   constructor(private formBuilder: FormBuilder,
-              private entitiesControllerService: EntitiesControllerService) { }
+              private entitiesGridItemsService: EntitiesGridItemsService) { }
 
   form;
   submit$;
@@ -30,7 +31,7 @@ export class EntityAddActionComponent implements OnInit {
   }
 
   submit(form: FormGroup) {
-    this.submit$ = this.entitiesControllerService.postEntity(form.value);
+    this.submit$ = this.entitiesGridItemsService.addItem(form.value);
   }
 
   handleResponse() {

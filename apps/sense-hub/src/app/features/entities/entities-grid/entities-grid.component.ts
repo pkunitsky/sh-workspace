@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Entity } from '@workspace-sense-hub/sh-api';
-import { EntitiesGridItemsService } from '../services/entities-grid-items.service';
-import { EntitiesGridFields } from '../entities-grid-fields.enum';
+import { EntitiesGridItemsService } from '../entity-services/entities-grid-items.service';
+import { EntitiesGridFields } from './entities-grid-fields.enum';
 import { ShMockApiService } from '@workspace-sense-hub/sh-mock-api';
 import { Subscription } from 'rxjs';
 import { LoggingService, LogType } from '@workspace-sense-hub/logging';
 import { clone, default_scrollbar_height } from '@workspace-sense-hub/components';
+import { EntityViewModalService } from '../entity-view-modal/entity-view-modal.service';
 
 export function trackEntityBy(index, entity: Entity) {
   return `${index}-${entity.animalId}`;
@@ -25,7 +26,8 @@ export class EntitiesGridComponent implements OnInit, OnDestroy {
 
   constructor(public entitiesGridItemsService: EntitiesGridItemsService,
               private mockApiService: ShMockApiService,
-              private loggingService: LoggingService) {
+              private loggingService: LoggingService,
+              public entityViewModalService: EntityViewModalService) {
   }
 
   entities$;

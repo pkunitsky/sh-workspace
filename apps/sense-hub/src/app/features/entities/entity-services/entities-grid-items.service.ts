@@ -7,7 +7,7 @@ import {
   Entity, EntityListResponse
 } from '@workspace-sense-hub/sh-api';
 import { flatMap, map, mergeMap, tap } from 'rxjs/operators';
-import { clone } from '../../../../../../../../libs/components/src/lib/shared/utils';
+import { clone } from '../../../../../../../libs/components/src/lib/shared/utils';
 import { ShMockApiService } from '@workspace-sense-hub/sh-mock-api';
 
 @Injectable({

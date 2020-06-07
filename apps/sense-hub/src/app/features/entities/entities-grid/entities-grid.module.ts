@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GridModule } from './entities-grid/grid/grid.module';
+import { GridModule } from './grid/grid.module';
 import { LoadingModule, OopsModule } from '@workspace-sense-hub/components';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { EntitiesGridComponent } from './entities-grid/entities-grid.component';
+import { EntitiesGridComponent } from './entities-grid.component';
 import { EntityActionsModule } from '../entity-actions/entity-actions.module';
 import { ApiLoggerModule } from '../../../../../../../libs/logging/src/lib/api-logger/api-logger.module';
+import { EntityViewModalModule } from '../entity-view-modal/entity-view-modal.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ApiLoggerModule } from '../../../../../../../libs/logging/src/lib/api-l
     OopsModule,
     PerfectScrollbarModule,
     ApiLoggerModule,
-    EntityActionsModule
+    EntityActionsModule,
+    EntityViewModalModule
   ],
   exports: [
     EntitiesGridComponent

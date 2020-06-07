@@ -43,7 +43,6 @@ export class ApiLoggerInterceptor implements HttpInterceptor {
   }
 
   notifyRequest(request) {
-    console.log(request);
     this.loggingService.publishLog(LogType.Information, `${request.method} ${request.url}`);
   }
 
