@@ -1,5 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
-import { ShApiModule } from './sense-hub-api.module';
+import { ShApiModule } from './sh-api.module';
 
 describe('SenseHubApiModule', () => {
   beforeEach(async(() => {
