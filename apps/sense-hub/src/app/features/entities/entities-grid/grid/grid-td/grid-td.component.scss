@@ -2,4 +2,13 @@
   &.is-editable {
     cursor: text;
   }
+
+  &.is-edit-mode {
+    padding: 0 !important;
+  }
+
+  .wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

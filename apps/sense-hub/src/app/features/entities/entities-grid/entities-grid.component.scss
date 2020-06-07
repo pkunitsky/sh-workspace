@@ -1,3 +1,45 @@
 .table {
   width: 100%;
+
+  [shGridThead] {
+    background: #F5F7F7;
+
+    th {
+      border: 1px solid #eee;
+    }
+  }
+
+  .altRow .inner-table {
+    width: 100%;
+  }
+
+  /* remove the padding for full width */
+  .altRow > td {
+    padding: 0 !important;
+  }
+
+  .inner-table {
+    &,
+    tbody,
+    tr {
+      border-left: none;
+      border-right: none;
+    }
+
+    td {
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    &,
+    tbody,
+    tr:last-child,
+    td {
+      border-bottom: none !important;
+    }
+  }
 }

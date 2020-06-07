@@ -1,15 +1,15 @@
-<ng-container *ngIf="!isEditMode">
+<div class="wrapper" *ngIf="!isEditMode">
   {{value}}
   <ng-content></ng-content>
-</ng-container>
+</div>
 
-<ng-container *ngIf="isEditMode">
+<div class="wrapper" *ngIf="isEditMode">
   <form autocomplete="off"
         *ngIf="form"
         [formGroup]="form"
         spellcheck="false"
-        (ngSubmit)="save(form.value.string)">
-    <input type="text" name="value" (focusout)="save(form.value.string)" formControlName="string">
+        (ngSubmit)="save(form.value.value)">
+    <form-input class="compact" type="text" formControlName="value" (focusout)="save(form.value.value)"></form-input>
   </form>
-</ng-container>
+</div>
 

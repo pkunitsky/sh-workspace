@@ -7,13 +7,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SpinnerAnimatedComponent } from './spinner-animated/spinner-animated.component';
 import { ThreeDotsAnimatedComponent } from './three-dots-animated/three-dots-animated.component';
 import { DirectivesModule } from '../shared/directives/directives.module';
+import { LoadingMiniComponent } from './loading-mini/loading-mini.component';
+import { SemanticUiModule } from '../../../../../apps/sense-hub/src/app/features/test/semantic-ui-test/semantic-ui/semantic-ui.module';
 
 @NgModule({
   declarations: [
     LoadingComponent,
     LoadingButtonComponent,
     SpinnerAnimatedComponent,
-    ThreeDotsAnimatedComponent
+    ThreeDotsAnimatedComponent,
+    LoadingMiniComponent
   ],
   imports: [
     CommonModule,
@@ -21,12 +24,14 @@ import { DirectivesModule } from '../shared/directives/directives.module';
     FormsModule,
     ReactiveFormsModule,
     DirectivesModule,
+    SemanticUiModule
   ],
   exports: [
     LoadingComponent,
     LoadingButtonComponent,
     SpinnerAnimatedComponent,
-    ThreeDotsAnimatedComponent
+    ThreeDotsAnimatedComponent,
+    LoadingMiniComponent
   ]
 })
 export class LoadingModule {

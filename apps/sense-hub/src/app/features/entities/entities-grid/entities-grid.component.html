@@ -11,7 +11,7 @@
   <th shGridTh>actions</th>
   </thead>
   <tbody>
-  <tr>
+  <tr class="altRow">
     <td [attr.colspan]="7">
       <loading [observable]="entities$" (dataOut)="handleResponse($event)">
         <perfect-scrollbar [style.height.px]="default_scrollbar_height" *ngIf="(entitiesGridItemsService.items$|async) as items">

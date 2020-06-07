@@ -8,4 +8,11 @@ form-input {
   $padding: 5px 5px 5px $padding-left;
 
   @include formInput($font-size, $bg-color, $border-color, $padding, $padding-left);
+
+  $padding-left-compact: 5px;
+  $padding-compact: 2px 2px 2px $padding-left-compact;
+
+  &.compact {
+    @include formInput($font-size, $bg-color, $border-color, $padding-compact, $padding-left-compact);
+  }
 }

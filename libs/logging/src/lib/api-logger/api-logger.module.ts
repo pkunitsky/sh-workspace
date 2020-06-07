@@ -4,6 +4,7 @@ import { ApiLoggerComponent } from './api-logger.component';
 import { MomentModule } from 'ngx-moment';
 import { ShMockApiModule } from '@workspace-sense-hub/sh-mock-api';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { SemanticUiModule } from '../../../../../apps/sense-hub/src/app/features/test/semantic-ui-test/semantic-ui/semantic-ui.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
     CommonModule,
     MomentModule,
     ShMockApiModule,
-    PerfectScrollbarModule
+    PerfectScrollbarModule,
+    SemanticUiModule
   ],
   exports: [
     ApiLoggerComponent

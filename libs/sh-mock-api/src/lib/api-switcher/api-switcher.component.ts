@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ShMockApiService } from '../sh-mock-api.service';
+import { ShMockApiService } from '../services/sh-mock-api.service';
 
 @Component({
   selector: 'sh-api-switcher',

@@ -9,6 +9,7 @@ import { GridThComponent } from './grid-th/grid-th.component';
 import { GridTbodyComponent } from './grid-tbody/grid-tbody.component';
 import { SimpleConfirmationModule } from '@workspace-sense-hub/components';
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { FormModule } from '../../../../../../../../libs/components/src/lib/form/form.module';
 
 
 
@@ -26,7 +27,8 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     FormsModule,
     ReactiveFormsModule,
     SimpleConfirmationModule,
-    ConfirmationPopoverModule
+    ConfirmationPopoverModule,
+    FormModule
   ],
   exports: [
     GridTheadComponent,

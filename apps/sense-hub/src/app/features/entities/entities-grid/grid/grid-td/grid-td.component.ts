@@ -17,20 +17,20 @@ export class GridTdComponent implements OnInit {
   @Input() @HostBinding('class.is-editable') isEditable;
   @Output() editOut = new EventEmitter<any>();
 
-  public isEditMode = false;
-  public form: FormGroup;
+  @HostBinding('class.is-edit-mode') isEditMode = false;
+  form: FormGroup;
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      string: [this.value, []]
+      value: [this.value, []]
     });
   }
 
-  public save(string) {
+  public save(formValue) {
     this.isEditMode = false;
 
-    if (this.value !== string) {
-      this.editOut.emit(string);
+    if (this.value !== formValue) {
+      this.editOut.emit(formValue);
     }
   }
 

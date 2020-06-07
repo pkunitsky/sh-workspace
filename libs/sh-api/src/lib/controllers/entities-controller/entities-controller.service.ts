@@ -16,7 +16,7 @@ export class EntitiesControllerService extends Controller {
   }
 
   postEntity(entity: Entity) {
-    return this.post(EntitiesControllerPaths.add, null);
+    return this.post(EntitiesControllerPaths.add, entity);
   }
 
   patchEntity(entity: Entity) {

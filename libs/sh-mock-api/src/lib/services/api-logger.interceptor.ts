@@ -11,16 +11,22 @@ import { Observable, throwError } from 'rxjs';
 import { EntitiesControllerPaths, ShApiConfig } from '@workspace-sense-hub/sh-api';
 import { LoggingService, LogType } from '@workspace-sense-hub/logging';
 import { catchError, tap } from 'rxjs/operators';
+import { ShMockApiService } from '../services/sh-mock-api.service';
 
 @Injectable()
 export class ApiLoggerInterceptor implements HttpInterceptor {
 
   constructor(private config: ShApiConfig,
-              private loggingService: LoggingService) {
+              private loggingService: LoggingService,
+              private mockApiService: ShMockApiService) {
   }
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const path = this.config.apiBase ? request.url.replace(this.config.apiBase, '') : request.url;
+  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    console.log(req.url.replace(this.config.apiBase, this.mockApiService.apiBase));
+    console.log(req.url);
+    const request = this.mockApiService.isEnabled ? req.clone({url: req.url.replace(this.config.apiBase, this.mockApiService.apiBase)})
+      : req;
+    const path = this.mockApiService.formatRequestUrl(request);
     const isEntityControllerApiCall = Object.values(EntitiesControllerPaths).some(entityControllerPath => path.includes(entityControllerPath));
 
     if (isEntityControllerApiCall) {

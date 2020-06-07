@@ -1,0 +1,4 @@
+<button class="{{className}}" [class.disabled]="disabled" [attr.type]="type">
+  <span class="btn-text" [style.visibility]="active ? 'hidden' : 'visible'"><ng-content></ng-content></span>
+  <three-dots-animated *ngIf="active && !failed"></three-dots-animated>
+</button>
