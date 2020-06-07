@@ -5,15 +5,15 @@
   $success: #27ae60;
 
   display: block;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 12px;
-  letter-spacing: 1px;
 
   .control-panel {
     margin-bottom: 3px;
   }
 
   .logs {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
     padding-right: 15px;
 
     &-entry {

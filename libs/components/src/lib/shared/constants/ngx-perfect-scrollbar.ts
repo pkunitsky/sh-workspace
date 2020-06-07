@@ -1,6 +1,6 @@
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-export const default_scrollbar_height = 750;
+export const default_scrollbar_height = 600;
 
 export const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,

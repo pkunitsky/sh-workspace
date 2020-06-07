@@ -1,10 +1,10 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: '[shGridTd]',
   templateUrl: './grid-td.component.html',
-  styleUrls: ['./grid-td.component.css']
+  styleUrls: ['./grid-td.component.scss']
 })
 export class GridTdComponent implements OnInit {
   readonly JSON = JSON;
@@ -14,7 +14,7 @@ export class GridTdComponent implements OnInit {
   }
 
   @Input() value: any;
-  @Input() isEditable;
+  @Input() @HostBinding('class.is-editable') isEditable;
   @Output() editOut = new EventEmitter<any>();
 
   public isEditMode = false;
