@@ -12,7 +12,7 @@
   <tr>
     <td [attr.colspan]="7">
       <loading [observable]="entities$" (dataOut)="handleResponse($event)">
-        <perfect-scrollbar [style.height.px]="500" *ngIf="(entitiesGridItemsService.items$|async) as items">
+        <perfect-scrollbar [style.height.px]="default_scrollbar_height" *ngIf="(entitiesGridItemsService.items$|async) as items">
           <table class="inner-table" *ngIf="items?.length">
             <tbody shGridTbody>
             <tr shGridTr *ngFor="let entity of items; let index = index; trackBy: trackEntityBy">

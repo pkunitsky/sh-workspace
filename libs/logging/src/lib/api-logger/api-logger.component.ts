@@ -3,6 +3,7 @@ import { LoggingService, LogType } from '@workspace-sense-hub/logging';
 import { ILogEntry } from '../i-log-entry';
 import {format_logger} from '../../../../components/src/lib/shared/constants/moment-formatting';
 import { PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollbar';
+import { default_scrollbar_height } from '@workspace-sense-hub/components';
 
 @Component({
   selector: 'sh-api-logger',
@@ -12,6 +13,7 @@ import { PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfec
 export class ApiLoggerComponent implements OnInit {
   readonly logType = LogType;
   readonly format_logger = format_logger;
+  readonly default_scrollbar_height = default_scrollbar_height;
 
   @ViewChild('scrollbarComponent', {read: PerfectScrollbarComponent}) scrollbarComponent: PerfectScrollbarComponent;
 

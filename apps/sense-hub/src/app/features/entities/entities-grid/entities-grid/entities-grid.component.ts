@@ -5,7 +5,7 @@ import { EntitiesGridFields } from '../entities-grid-fields.enum';
 import { ShMockApiService } from '@workspace-sense-hub/sh-mock-api';
 import { Subscription } from 'rxjs';
 import { LoggingService, LogType } from '@workspace-sense-hub/logging';
-import { clone } from '@workspace-sense-hub/components';
+import { clone, default_scrollbar_height } from '@workspace-sense-hub/components';
 
 export function trackEntityBy(index, entity: Entity) {
   return `${index}-${entity.animalId}`;
@@ -18,8 +18,8 @@ export function trackEntityBy(index, entity: Entity) {
 })
 export class EntitiesGridComponent implements OnInit, OnDestroy {
   readonly trackEntityBy = trackEntityBy;
-  readonly Object = Object;
   readonly EntitiesGridFields = EntitiesGridFields;
+  readonly default_scrollbar_height = default_scrollbar_height;
 
   private subs = new Subscription();
 

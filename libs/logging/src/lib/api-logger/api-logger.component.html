@@ -3,7 +3,7 @@
   <button (click)="clear()">clear</button>
 </div>
 
-<perfect-scrollbar #scrollbarComponent [style.height.px]="500">
+<perfect-scrollbar #scrollbarComponent [style.height.px]="default_scrollbar_height">
   <div class="logs">
     <div class="logs-entry" *ngFor="let entry of logEntries"
          [class.success]="entry.severity === logType.Success"
